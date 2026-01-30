@@ -1,0 +1,38 @@
+{% extends "dashboard/master.html" %}
+
+{% block content %}
+<table class="tasks-table">
+  <tbody>
+    <tr>
+      <td colspan="2" class="top-actions">
+        <a href="{{ url_for('tasks.create') }}" class="link-nova-tarefa">+ Nova tarefa</a>
+      </td>
+    </tr>
+
+    {% for t in tasks %}
+      <tr>
+        <td class="task-name">{{ t }}</td>
+        <td class="task-actions-cell">
+        <div class="actions-inline">
+            <a href="{{ url_for('tasks.update', id=loop.index0) }}" 
+              class="btn-task btn-update" 
+              style="margin-left: 30px !important;">
+                Update
+            </a>
+
+            <form action="{{ url_for('tasks.delete_task_action', id=loop.index0) }}" method="POST" style="display: inline;">
+                <button type="submit" class="btn-task btn-delete">
+                    Delete
+                </button>
+            </form>
+</div>
+        </td>
+      </tr>
+    {% else %}
+      <tr>
+        <td colspan="2" class="empty-list">A lista está vazia.</td>
+      </tr>
+    {% endfor %} 
+  </tbody>
+</table>
+{% endblock %}
