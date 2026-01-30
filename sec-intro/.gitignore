@@ -1,0 +1,41 @@
+# --- Python ---
+__pycache__/
+*.py[cod]
+*.pyd
+*.so
+*.egg-info/
+dist/
+build/
+.eggs/
+.pytest_cache/
+.mypy_cache/
+.ruff_cache/
+.coverage
+htmlcov/
+
+# --- Env files ---
+.env
+.flaskenv
+
+# --- Virtualenv ---
+.venv/
+venv/
+env/
+ENV/
+
+# --- IDEs ---
+.idea/
+docs/_build/
+
+# --- VS Code (ignora tudo, mas mantém configs úteis) ---
+.vscode/*
+!.vscode/launch.json
+!.vscode/settings.json
+!.vscode/extensions.json
+
+# --- OS ---
+.DS_Store
+Thumbs.db
+
+# --- Workspace files ---
+*.code-workspace
