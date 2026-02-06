@@ -22,6 +22,7 @@ htmlcov/
 venv/
 env/
 ENV/
+vtasks/
 
 # --- IDEs ---
 .idea/
