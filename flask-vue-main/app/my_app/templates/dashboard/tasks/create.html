@@ -1,0 +1,27 @@
+{% extends "dashboard/master.html" %}
+
+{% block content %}
+  <h2>Criar Nova Tarefa</h2>
+
+  <form method="POST" action="{{ url_for('taskRoute.create') }}">
+      <label>Nome:</label>
+      <input type="text" name="task" placeholder="Digite algo e envie..."> 
+      <button type="submit">Enviar</button>
+  </form>
+
+  <hr>
+
+  <h3>Lista de Tarefas no Browser:</h3>
+  <ul>
+    {# O Jinja vai percorrer a 'lista' que você passou no render_template #}
+    {% for item in lista %}
+      <li><strong>{{ item }}</strong></li>
+    {% else %}
+      <li>A lista ainda está vazia no navegador.</li>
+    {% endfor %}
+  </ul>
+
+  {% if tasks %}
+    <p>Ultima tarefa recebida: <em>{{ tasks }}</em></p>
+  {% endif %}
+{% endblock %}

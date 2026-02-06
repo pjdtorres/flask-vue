@@ -1,0 +1,38 @@
+{% extends "dashboard/master.html" %}
+
+{% block content %}
+<table class="tasks-table">
+  <tbody>
+    <tr>
+      <td colspan="2" class="top-actions">
+        <a href="{{ url_for('taskRoute.create') }}" class="link-nova-tarefa">+ Nova tarefa</a>
+      </td>
+    </tr>
+
+    {% for t in tasks %}
+      <tr>
+        <td class="task-name">{{ t.name | text_to_upper }}</td>
+        <td class="task-actions-cell">
+          <div class="actions-inline">
+            <a href="{{ url_for('taskRoute.update', id=t.id) }}" class="btn-task btn-update">Update</a>
+
+            <form action="{{ url_for('taskRoute.delete', id=t.id) }}" method="POST" class="form-inline">
+              <button type="submit" class="btn-task btn-delete">Delete</button>
+            </form>
+          </div>
+        </td>
+      </tr>
+    {% endfor %}
+
+    <tr>
+      <td colspan="2" class="tasks-empty">
+        {% if tasks %}
+          Última tarefa da lista: {{ tasks[-1].name | text_to_upper }}
+        {% else %}
+          Nenhuma tarefa registada.
+        {% endif %}
+      </td>
+    </tr>
+  </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,57 @@
+/* Contentor principal das ações na tabela */
+.actions-inline {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+    width: 100%;
+}
+
+/* O formulário deixa de existir para efeitos de layout, 
+   permitindo que o botão dentro dele se alinhe pelo Flexbox do pai */
+.form-inline {
+    display: contents;
+}
+
+/* Base comum para links e botões */
+.btn-task {
+    width: 120px;
+    height: 42px;
+    border-radius: 6px;
+    font-weight: 600;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    border: none;
+    transition: all 0.2s ease;
+}
+
+.btn-update {
+    background-color: #28a745;
+    color: white;
+}
+
+.btn-update:hover {
+    background-color: #218838;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}
+
+.page-container {
+  padding: 20px;
+}
+
+.tasks-empty {
+  text-align: center;
+  padding-top: 20px;
+  font-weight: bold;
+}
